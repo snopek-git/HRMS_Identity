@@ -35,7 +35,7 @@ namespace HRMS_Identity.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=db-mssql;Initial Catalog=s15153;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=db-mssql;Initial Catalog=s15885;Integrated Security=True");
             }
         }
 
