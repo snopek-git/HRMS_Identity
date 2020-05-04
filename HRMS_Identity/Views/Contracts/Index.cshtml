@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HRMS_Identity.Models.Contract>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdContractStatusNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdContractTypeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmployeeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdContractStatusNavigation.StatusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdContractTypeNavigation.ContractType1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmployeeNavigation.EmailAddress)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdContract">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdContract">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdContract">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+﻿@model HRMS_Identity.Models.Contract
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Contract</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdContract" class="control-label"></label>
+                <input asp-for="IdContract" class="form-control" />
+                <span asp-validation-for="IdContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractNumber" class="control-label"></label>
+                <input asp-for="ContractNumber" class="form-control" />
+                <span asp-validation-for="ContractNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractStart" class="control-label"></label>
+                <input asp-for="ContractStart" class="form-control" />
+                <span asp-validation-for="ContractStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractEnd" class="control-label"></label>
+                <input asp-for="ContractEnd" class="form-control" />
+                <span asp-validation-for="ContractEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdContractType" class="control-label"></label>
+                <select asp-for="IdContractType" class ="form-control" asp-items="ViewBag.IdContractType"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEmployee" class="control-label"></label>
+                <select asp-for="IdEmployee" class ="form-control" asp-items="ViewBag.IdEmployee"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdContractStatus" class="control-label"></label>
+                <select asp-for="IdContractStatus" class ="form-control" asp-items="ViewBag.IdContractStatus"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
